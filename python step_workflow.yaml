@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: hello-world-  # Name of this Workflow
+spec:
+  entrypoint: gen-random-int        # Defines "whalesay" as the "main" template
+  templates:
+  - name: hello-hello-hello
+    steps:
+    - - name: step1
+        template: prepare-data
+    - - name: step2a
+        template: run-data-first-half
+      - name: step2b
+        template: run-data-second-half 
